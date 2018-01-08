@@ -3,6 +3,7 @@ package main;
 import classe.*;
 import exception.CreneauException;
 import exception.NationaliteException;
+import exception.NbMatchLimiteException;
 import exception.ReposException;
 
 import java.util.*;
@@ -14,6 +15,30 @@ public class Application {
     public static void main(String Args[]) {
         ArbitreChaise arbitreChaise1 = new ArbitreChaise("patrick.chirac@gmail.com", "patrick", "chirac",
                 "Français");
+        ArbitreChaise arbitreChaise2 = new ArbitreChaise("mark.unbut@gmail.com","mark","unbut",
+                "Indien");
+        ArbitreChaise arbitreChaise3 = new ArbitreChaise("gerard.mentfroid@gmail.com","gerard","mentfroid",
+                "Suisse");
+        ArbitreChaise arbitreChaise4 = new ArbitreChaise("emile.louis@gmail.com","emile","louis",
+                "Danois");
+        ArbitreChaise arbitreChaise5 = new ArbitreChaise("marcel.ino@gmail.com","marcel","ino",
+                "Italien");
+        ArbitreChaise arbitreChaise6 = new ArbitreChaise("jean.meluch@gmail.com","jean","meluch",
+                "Venezuelien");
+        ArbitreChaise arbitreChaise7 = new ArbitreChaise("phil.air@gmail.com","phil","air",
+                "Anglais");
+        ArbitreChaise arbitreChaise8 = new ArbitreChaise("carl.larguerrefaite@gmail.com","carl","laguerrefaite",
+                "Allemand");
+        ArrayList<ArbitreChaise> listArbitreChaise = new ArrayList<>();
+        listArbitreChaise.add(arbitreChaise1);
+        listArbitreChaise.add(arbitreChaise2);
+        listArbitreChaise.add(arbitreChaise3);
+        listArbitreChaise.add(arbitreChaise4);
+        listArbitreChaise.add(arbitreChaise5);
+        listArbitreChaise.add(arbitreChaise6);
+        listArbitreChaise.add(arbitreChaise7);
+        listArbitreChaise.add(arbitreChaise8);
+
         ArbitreLigne arbitreLigne1 = new ArbitreLigne("patrick", "demal", "Ecossais",
                 "patrickcalcker@gmail.com");
         ArbitreLigne arbitreLigne2 = new ArbitreLigne("patrick", "sasi", "Français",
@@ -89,8 +114,8 @@ public class Application {
         Joueur joueur27 = new Joueur("Douglas", "O’Chocolat", "Anglais", 59);
         Joueur joueur28 = new Joueur("Garcin", "Lazare", "Italien", 84);
         Joueur joueur29 = new Joueur("Hassan", "Cehef", "Tunisien", 91);
-        Joueur joueur30 = new Joueur("Medhi ", "Khaman", "Tunisien", 86);
-        Joueur joueur31 = new Joueur("Pacôme ", "Toullemonde", "Russe", 90);
+        Joueur joueur30 = new Joueur("Medhi", "Khaman", "Tunisien", 86);
+        Joueur joueur31 = new Joueur("Pacôme", "Toullemonde", "Russe", 90);
         Joueur joueur32 = new Joueur("Tex", "Agere", "Anglais", 23);
 
         ArrayList<Joueur> listJoueur = new ArrayList<>();
@@ -136,6 +161,8 @@ public class Application {
         listJoueurMatchTest.add(joueur17);
         Court courtPrincipal = new Court("Court Principal", 5600);
         // la partie qui sert à rentrer le résultat sera programmer sur l'interface
+        Application testApplication = new Application();
+        testApplication.genererTableau(listJoueur,listMatch);
 
 
     }
@@ -143,8 +170,23 @@ public class Application {
 
     public void programmerUnMatch(ArrayList<Match> listMatch, GregorianCalendar horraireDuMatch, Court courtDuMatch,
                                   ArrayList<Joueur> listJoueurDuMatch, EquipeRamasseur equipeRamasseur1, EquipeRamasseur equipeRamasseur2,
-                                  ArbitreChaise arbitreChaise, ArrayList<ArbitreLigne> listArbitreLigneDuMatch) {
+                                  ArbitreChaise arbitreChaise, ArrayList<ArbitreLigne> listArbitreLigneDuMatch, boolean matchDeQualification) {
         try {
+
+            if(!matchDeQualification){ /* boolean utile pour savoir si c'est un match de qualification ou non car la contrainte du nombre de match
+            arbitré par l'arbitre n'existe pas dans le cadre d'un match de qualification
+            */
+                if(listJoueurDuMatch.size() == 2) { // test si c'est un match simple on regarde le nombre de match simple arbitré par l'arbitre
+                    if (arbitreChaise.getNbMatchSimple() < 2){
+                        throw new NbMatchLimiteException("cet arbitre a dépassé son nombre de match simple maximum à arbitrer");
+                    }
+                }
+                if(listJoueurDuMatch.size() == 4){
+                    if (arbitreChaise.getNbMatchDouble() < 2){
+                        throw new NbMatchLimiteException("cet arbitre a dépassé son nombre de match double maximum à arbitrer");
+                    }
+                }
+            }
             for (Match matchList : listMatch) {
                 if (matchList.getDateMatch() == horraireDuMatch) {
                     if (matchList.getArbitreChaise() == arbitreChaise) {
@@ -170,17 +212,19 @@ public class Application {
                         }
                     }
                 }
-                ArrayList<Joueur> joueurArrayList = new ArrayList<>();
-                joueurArrayList = matchList.getJoueurMatch();
-                GregorianCalendar dateDuMatch = matchList.getDateMatch();
-                int jourDumatch = dateDuMatch.get(dateDuMatch.DAY_OF_WEEK);
-                int heureDuMatch = dateDuMatch.get(dateDuMatch.HOUR_OF_DAY);
-                // -3 -6 ou -4
-                if (jourDumatch == horraireDuMatch.get(horraireDuMatch.DAY_OF_WEEK)) {
-                    if (horraireDuMatch.get(horraireDuMatch.HOUR_OF_DAY) - 3 == heureDuMatch ||
-                            horraireDuMatch.get(horraireDuMatch.HOUR_OF_DAY) - 4 == heureDuMatch ||
-                            horraireDuMatch.get(horraireDuMatch.HOUR_OF_DAY) - 6 == heureDuMatch) {
-                        throw new ReposException("le joueur joue dans la même demi-journée");
+                if(!matchDeQualification) { // La contrainte du repos n'est pas valable dans le cas d'un match de qualification
+                    ArrayList<Joueur> joueurArrayList = new ArrayList<>();
+                    joueurArrayList = matchList.getJoueurMatch();
+                    GregorianCalendar dateDuMatch = matchList.getDateMatch();
+                    int jourDumatch = dateDuMatch.get(dateDuMatch.DAY_OF_WEEK);
+                    int heureDuMatch = dateDuMatch.get(dateDuMatch.HOUR_OF_DAY);
+                    // -3 -6 ou -4
+                    if (jourDumatch == horraireDuMatch.get(horraireDuMatch.DAY_OF_WEEK)) {
+                        if (horraireDuMatch.get(horraireDuMatch.HOUR_OF_DAY) - 3 == heureDuMatch ||
+                                horraireDuMatch.get(horraireDuMatch.HOUR_OF_DAY) - 4 == heureDuMatch ||
+                                horraireDuMatch.get(horraireDuMatch.HOUR_OF_DAY) - 6 == heureDuMatch) {
+                            throw new ReposException("le joueur ne peut pas jouer dans la même demi-journée");
+                        }
                     }
                 }
             }
@@ -196,53 +240,37 @@ public class Application {
             System.err.println(e2.getMessage());
         } catch (ReposException e3) {
             System.err.println(e3.getMessage());
+        } catch (NbMatchLimiteException e4){
+            System.err.println(e4.getMessage());
         }
-
     }
 
-    public void genererPremierTour(ArrayList<Joueur> listJoueur, ArrayList<Match> listMatch, ArrayList<ArbitreLigne> listArbitreLigne,
-                                   ArrayList<ArbitreChaise> listArbitreChaise) {
+    public void genererTableau(ArrayList<Joueur> listJoueur, ArrayList<Match> listMatch) {
         // génération du premier tour de manière random sur les joueurs
-        boolean joueurDejaProgramme = false;
-        while(listMatch.size() < 17){ // il doit y avoir 16 matchs au premier tour étant donné qu'il y a 32 joueurs
+        ArrayList<Joueur> listClone = new ArrayList<>();
+        listClone = listJoueur;
+        int i = 0;
+        int compteurDeMatch = 0;
+        while(i < 16){ // il doit y avoir 16 matchs au premier tour étant donné qu'il y a 32 joueurs
             Random rand1 = new Random(); // random1 pour le joueur 1
             Random rand2 = new Random(); // random2 pour le joueur 2
-            int randomJ1 = rand1.nextInt(listJoueur.size());
-            int randomJ2 = rand2.nextInt(listJoueur.size());
-            System.out.println(listJoueur.get(randomJ1).getPrenom());
-            System.out.println(listJoueur.get(randomJ1).getNom());
-
+            int randomJ1 = rand1.nextInt(listClone.size());
+            int randomJ2 = rand2.nextInt(listClone.size());
 
             if (randomJ1 != randomJ2) { //test pour eviter un match avec les deux mêmes joueur
-                for (Match m : listMatch) {
-                    ArrayList<Joueur> listJoueurMatch = m.getJoueurMatch();
-                    for (Joueur joueurMatchList : listJoueurMatch) {
-                        //test pour éviter de programmer un joueur plusieurs fois
-                        if (listJoueur.get(randomJ1).getIdJoueur() == joueurMatchList.getIdJoueur()) {
-                            joueurDejaProgramme = true;
-                        } else if (listJoueur.get(randomJ2).getIdJoueur() == joueurMatchList.getIdJoueur()) {
-                            joueurDejaProgramme = true;
-                        }
-
-                    }
-                }
-                if (!joueurDejaProgramme) {
-                    ArrayList<Joueur> listJoueurNewMatch = new ArrayList<>();
-                    // création de la liste des joueurs pour le match
-                    listJoueurNewMatch.add(listJoueur.get(randomJ1));
-                    listJoueurNewMatch.add(listJoueur.get(randomJ2));
-                    Match newMatch = new Match();
-                    //on automatise le choix des arbitres
-                    for(ArbitreChaise arbitreChaiseNewMatch : listArbitreChaise){
-                        if(arbitreChaiseNewMatch.getNationaliteArbitre() != listJoueur.get(randomJ1).getNationaliteJoueur() &&
-                                arbitreChaiseNewMatch.getNationaliteArbitre() != listJoueur.get(randomJ2).getNationaliteJoueur()){
-                            newMatch.setArbitreChaise(arbitreChaiseNewMatch);
-                        }
-                    }
-
-
-                }
-
+                ArrayList<Joueur> listJoueurNewMatch = new ArrayList<>();
+                // création de la liste des joueurs pour le match
+                Joueur joueur1 = listJoueur.get(randomJ1);
+                Joueur joueur2 = listJoueur.get(randomJ2);
+                listJoueurNewMatch.add(joueur1);
+                listJoueurNewMatch.add(joueur2);
+                compteurDeMatch++;
+                System.out.println("le match " + compteurDeMatch + " opposera " + listJoueurNewMatch.get(0).getPrenom() + " " +
+                        listJoueurNewMatch.get(0).getNom() + " contre " + listJoueurNewMatch.get(1).getPrenom() + " " +
+                        listJoueurNewMatch.get(1).getNom());
+                listClone.remove(joueur1);
+                listClone.remove(joueur2);
+                i++;
             }
 
         }

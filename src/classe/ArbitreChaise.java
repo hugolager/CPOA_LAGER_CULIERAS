@@ -7,7 +7,8 @@ import classe.Arbitre;
  */
 
 public class ArbitreChaise extends Arbitre {
-    public Match[] match;
+    private int nbMatchSimple = 0;
+    private int nbMatchDouble = 0;
     private static int nbTotalArbitreChaise=0;
     private int idArbitreChaise;
     private String mailArbitreChaise;
@@ -64,10 +65,22 @@ public class ArbitreChaise extends Arbitre {
 
     }
 
+    public int getNbMatchSimple() {
+        return nbMatchSimple;
+    }
 
+    public void addMatchSimple() {
+        nbMatchSimple++;
+    }
+    public void removeMatchSimple(){
+        nbMatchSimple--;
+    }
 
+    public int getNbMatchDouble() {
+        return nbMatchDouble;
+    }
 
-
-
-
+    public void addMatchDouble() {
+        nbMatchDouble++;
+    }
 }
