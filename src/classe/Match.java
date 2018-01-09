@@ -80,11 +80,12 @@ public class Match {
     public int getNbTotalMatch() {
         return nbTotalMatch;
     }
-    public static boolean creneauIsValide(ArrayList<Match> listMatch, GregorianCalendar dateMatch,Court newCourt ){
+    public static boolean creneauIsValide(GregorianCalendar dateMatch ){
         // On teste si l'heure du match est dans les créneaux qu'on a prédéfini.
-        if (dateMatch.get(Calendar.HOUR_OF_DAY) != 8 || dateMatch.get(Calendar.HOUR_OF_DAY) != 11 || dateMatch.get(Calendar.HOUR_OF_DAY) != 15
-                || dateMatch.get(Calendar.HOUR_OF_DAY) != 18 || dateMatch.get(Calendar.HOUR_OF_DAY) != 21  ){
-            return false;
+
+        if (dateMatch.get(Calendar.HOUR_OF_DAY) != 8 && dateMatch.get(Calendar.HOUR_OF_DAY) != 11 && dateMatch.get(Calendar.HOUR_OF_DAY) != 15 && dateMatch.get(Calendar.HOUR_OF_DAY) != 18
+                && dateMatch.get(Calendar.HOUR_OF_DAY) != 21 || dateMatch.get(Calendar.MINUTE) != 0){
+                return false;
         }
         return true;
     }
@@ -135,4 +136,5 @@ public class Match {
     public void setJoueursPerdants(ArrayList<Joueur> listJoueurMatch, ArrayList<Joueur> listJoueurDouble){
         //A voir si on met les joueurs de double dans des tableaux ou dans des listes
     }
+
 }

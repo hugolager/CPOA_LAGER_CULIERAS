@@ -2,6 +2,9 @@ package classe; /**
  * Created by hugol on 18/12/2017.
  */
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
 /** @pdOid 0f0c0d36-316a-44b9-b5a4-bdc5ead832b5 */
 public abstract class Arbitre {
 
@@ -26,6 +29,7 @@ public abstract class Arbitre {
     public abstract void setNationaliteArbitre(String nationaliteArbitre);
     public abstract String getPrenomArbitre();
     public abstract void setPrenomArbitre(String prenomArbitre);
+
 
     public java.util.Iterator getIteratorArbitreChaise() {
         if (arbitreChaise == null)
@@ -112,5 +116,24 @@ public abstract class Arbitre {
         if (arbitreLigne != null)
             arbitreLigne.clear();
     }
+    public ArrayList<GregorianCalendar> findEmploiDuTemps(ArrayList<Match> listMatch){
+        ArrayList<GregorianCalendar> listEDT = new ArrayList<>();
+        for(Match m : listMatch){
+            // dans le cas où c'est un arbitre de chaise
+            if(m.getArbitreChaise() == this){
+                listEDT.add(m.getDateMatch());
+            }
+            // si c'est un arbitre de ligne
+            ArrayList<ArbitreLigne> listArbitreLigne = new ArrayList<>();
+            listArbitreLigne = m.getListArbitreLigne();
+            for (ArbitreLigne arbitreLigneList : listArbitreLigne){
+                if(arbitreLigneList == this ){
+                    listEDT.add(m.getDateMatch());
+                }
+            }
+        }
+        return listEDT;
+    }
+
 
 }

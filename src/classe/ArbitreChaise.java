@@ -2,6 +2,9 @@ package classe;
 
 import classe.Arbitre;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
 /**
  * Created by hugol on 18/12/2017.
  */
@@ -65,6 +68,8 @@ public class ArbitreChaise extends Arbitre {
 
     }
 
+
+
     public int getNbMatchSimple() {
         return nbMatchSimple;
     }
@@ -83,4 +88,5 @@ public class ArbitreChaise extends Arbitre {
     public void addMatchDouble() {
         nbMatchDouble++;
     }
+
 }

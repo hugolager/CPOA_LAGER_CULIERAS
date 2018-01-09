@@ -3,6 +3,9 @@ package classe; /**
  */
 import classe.Arbitre;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
 
 public class ArbitreLigne extends Arbitre {
     private String mailArbitreLigne;
@@ -48,6 +51,8 @@ public class ArbitreLigne extends Arbitre {
     public void setPrenomArbitre(String prenomArbitreLigne) {
         this.prenomArbitre = prenomArbitreLigne;
     }
+
+
 
     public String getMailArbitreLigne() {
         return mailArbitreLigne;

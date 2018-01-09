@@ -5,6 +5,7 @@ import exception.CreneauException;
 import exception.NationaliteException;
 import exception.NbMatchLimiteException;
 import exception.ReposException;
+import org.omg.CORBA.FREE_MEM;
 
 import java.util.*;
 
@@ -154,17 +155,27 @@ public class Application {
         ArrayList<Match> listMatch = Match.getListMatch();
 
 
-        // cette partie sera réalisé via l'interface
-        GregorianCalendar calandarTest = new GregorianCalendar(2018, 03, 17, 8, 0);
-        ArrayList<Joueur> listJoueurMatchTest = new ArrayList<>();
-        listJoueurMatchTest.add(joueur3);
-        listJoueurMatchTest.add(joueur17);
-        Court courtPrincipal = new Court("Court Principal", 5600);
+
+
         // la partie qui sert à rentrer le résultat sera programmer sur l'interface
         Application testApplication = new Application();
-        testApplication.genererTableau(listJoueur,listMatch);
-
-
+        // testApplication.genererTableau(listJoueur,listMatch);
+        // cette partie sera réalisé via l'interface
+        // Test des méthodes programmer un match et findEDT
+        GregorianCalendar calandarTest = new GregorianCalendar(2018, 03, 17, 11, 00);
+        ArrayList<Joueur> listJoueurMatchTest = new ArrayList<>();
+        listJoueurMatchTest.add(joueur19);
+        listJoueurMatchTest.add(joueur32);
+        Court courtPrincipal = new Court("Court Principal", 5600);
+        //testApplication.programmerUnMatch(listMatch,calandarTest,courtPrincipal,listJoueurMatchTest,equipeRamasseur1,equipeRamasseur2,arbitreChaise1,
+        //        listArbitreLigne1,true);
+        ArrayList<GregorianCalendar> EDT = new ArrayList<>();
+        EDT = arbitreChaise1.findEmploiDuTemps(listMatch);
+        ArrayList<Arbitre> arbitreArrayListTest = new ArrayList<>();
+        arbitreArrayListTest = testApplication.findArbitre(listJoueur,calandarTest,listArbitreChaise,listArbitreLigne1,listMatch);
+        for(Arbitre arbitreTest : arbitreArrayListTest){
+            System.out.println("les arbitres sont :" + arbitreTest.getPrenomArbitre() + " " + arbitreTest.getNomArbitre());
+        }
     }
 
 
@@ -228,7 +239,7 @@ public class Application {
                     }
                 }
             }
-            if (!Match.creneauIsValide(listMatch, horraireDuMatch, courtDuMatch)) {
+            if (!Match.creneauIsValide(horraireDuMatch)) {
                 throw new CreneauException("le créneau n'est pas valide");
             }
             Match matchAProgrammer = new Match(horraireDuMatch, arbitreChaise, equipeRamasseur1, equipeRamasseur2, listJoueurDuMatch, listArbitreLigneDuMatch);
@@ -275,6 +286,57 @@ public class Application {
 
         }
     }
+    public ArrayList<Arbitre> findArbitre(ArrayList<Joueur> listJoueur, GregorianCalendar horraireMatch,ArrayList<ArbitreChaise> listArbitreChaise,
+                                          ArrayList<ArbitreLigne>listArbitreLigne, ArrayList<Match> listMatch){
+        boolean disponibleAHorraireMatch = true;
+        ArrayList<Arbitre> listArbitrePotentiel = new ArrayList<>();
+        // l'arbitre chaise sera donc au premier indice de la liste retourné
+        while(listArbitrePotentiel.size() < 2) {
+            for (ArbitreChaise arbitreChaiseList : listArbitreChaise) {
+                ArrayList<GregorianCalendar> EDTArbitreChaise = new ArrayList<>();
+                EDTArbitreChaise = arbitreChaiseList.findEmploiDuTemps(listMatch);
+                for (GregorianCalendar horraireIndispo : EDTArbitreChaise) {
+                    if (horraireIndispo == horraireMatch) {
+                        disponibleAHorraireMatch = false;
+                    }
+                }
+                for (Joueur j : listJoueur) {
+                    if (disponibleAHorraireMatch) {
+                        if (arbitreChaiseList.getNationaliteArbitre() != j.getNationaliteJoueur()) {
+                            listArbitrePotentiel.add(arbitreChaiseList);
 
-}
+                        }
+                    }
+                }
+            }
+        }
+        disponibleAHorraireMatch = true;
+        while ( listArbitrePotentiel.size() < 10) {
+            for (ArbitreLigne arbitreLigneList : listArbitreLigne) {
+                ArrayList<GregorianCalendar> EDTArbitreLigne = new ArrayList<>();
+                EDTArbitreLigne = arbitreLigneList.findEmploiDuTemps(listMatch);
+                for (GregorianCalendar horraireIndispo : EDTArbitreLigne) {
+                    if (horraireIndispo == horraireMatch) {
+                        disponibleAHorraireMatch = false;
+                    }
+                }
+                for (Joueur j : listJoueur) {
+                    if (disponibleAHorraireMatch) {
+                        if (arbitreLigneList.getNationaliteArbitre() != j.getNationaliteJoueur()) {
+                            listArbitrePotentiel.add(arbitreLigneList);
+
+                        }
+                    }
+                }
+            }
+        }
+        if(listArbitrePotentiel.size() == 9) {
+            return listArbitrePotentiel;
+        }
+        return null;
+        }
+
+    }
+
+
 
