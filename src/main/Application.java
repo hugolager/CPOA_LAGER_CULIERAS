@@ -172,10 +172,11 @@ public class Application {
         ArrayList<GregorianCalendar> EDT = new ArrayList<>();
         EDT = arbitreChaise1.findEmploiDuTemps(listMatch);
         ArrayList<Arbitre> arbitreArrayListTest = new ArrayList<>();
-        arbitreArrayListTest = testApplication.findArbitre(listJoueur,calandarTest,listArbitreChaise,listArbitreLigne1,listMatch);
+        arbitreArrayListTest = testApplication.findArbitre(listJoueur,calandarTest,true, listArbitreChaise,listArbitreLigne1,listMatch);
         for(Arbitre arbitreTest : arbitreArrayListTest){
-            System.out.println("les arbitres sont :" + arbitreTest.getPrenomArbitre() + " " + arbitreTest.getNomArbitre());
+            System.out.println("les arbitres sont : " + arbitreTest.getPrenomArbitre() + " " + arbitreTest.getNomArbitre());
         }
+
     }
 
 
@@ -286,54 +287,50 @@ public class Application {
 
         }
     }
-    public ArrayList<Arbitre> findArbitre(ArrayList<Joueur> listJoueur, GregorianCalendar horraireMatch,ArrayList<ArbitreChaise> listArbitreChaise,
+    public ArrayList<Arbitre> findArbitre(ArrayList<Joueur> listJoueur, GregorianCalendar horraireMatch, boolean matchDeQualification, ArrayList<ArbitreChaise> listArbitreChaise,
                                           ArrayList<ArbitreLigne>listArbitreLigne, ArrayList<Match> listMatch){
-        boolean disponibleAHorraireMatch = true;
         ArrayList<Arbitre> listArbitrePotentiel = new ArrayList<>();
-        // l'arbitre chaise sera donc au premier indice de la liste retourné
-        while(listArbitrePotentiel.size() < 2) {
-            for (ArbitreChaise arbitreChaiseList : listArbitreChaise) {
-                ArrayList<GregorianCalendar> EDTArbitreChaise = new ArrayList<>();
-                EDTArbitreChaise = arbitreChaiseList.findEmploiDuTemps(listMatch);
-                for (GregorianCalendar horraireIndispo : EDTArbitreChaise) {
-                    if (horraireIndispo == horraireMatch) {
-                        disponibleAHorraireMatch = false;
+        boolean matchSimple;
+        if(listJoueur.size() == 2){
+            matchSimple = true;
+        }
+        else{
+            matchSimple = false;
+        }
+        for (ArbitreChaise arbitreChaisePotentiel : listArbitreChaise) {
+            boolean disponible = arbitreChaisePotentiel.ArbitreDispoAHorraire(horraireMatch,listMatch);
+            boolean bonneNationalite = arbitreChaisePotentiel.ArbitreBonneNationalite(listJoueur);
+            if (!matchDeQualification){
+                if(matchSimple) {
+                    int nbMatchArbitre = arbitreChaisePotentiel.getNbMatchSimple();
+                    if(nbMatchArbitre < 3 && disponible && bonneNationalite){
+                        listArbitrePotentiel.add(arbitreChaisePotentiel);
                     }
                 }
-                for (Joueur j : listJoueur) {
-                    if (disponibleAHorraireMatch) {
-                        if (arbitreChaiseList.getNationaliteArbitre() != j.getNationaliteJoueur()) {
-                            listArbitrePotentiel.add(arbitreChaiseList);
+                else {
+                    int nbMatchArbitre = arbitreChaisePotentiel.getNbMatchDouble();
+                    if(nbMatchArbitre < 3 && disponible && bonneNationalite){
+                        listArbitrePotentiel.add(arbitreChaisePotentiel);
+                    }
+                }
 
-                        }
-                    }
-                }
+            }
+            else {
+            if(disponible && bonneNationalite && listArbitrePotentiel.size() < 1) {
+                listArbitrePotentiel.add(arbitreChaisePotentiel);
+            }
             }
         }
-        disponibleAHorraireMatch = true;
-        while ( listArbitrePotentiel.size() < 10) {
-            for (ArbitreLigne arbitreLigneList : listArbitreLigne) {
-                ArrayList<GregorianCalendar> EDTArbitreLigne = new ArrayList<>();
-                EDTArbitreLigne = arbitreLigneList.findEmploiDuTemps(listMatch);
-                for (GregorianCalendar horraireIndispo : EDTArbitreLigne) {
-                    if (horraireIndispo == horraireMatch) {
-                        disponibleAHorraireMatch = false;
-                    }
-                }
-                for (Joueur j : listJoueur) {
-                    if (disponibleAHorraireMatch) {
-                        if (arbitreLigneList.getNationaliteArbitre() != j.getNationaliteJoueur()) {
-                            listArbitrePotentiel.add(arbitreLigneList);
 
-                        }
-                    }
-                }
+        for (ArbitreLigne arbitreLignePotentiel : listArbitreLigne) {
+            boolean disponible = arbitreLignePotentiel.ArbitreDispoAHorraire(horraireMatch,listMatch);
+            boolean bonneNationalite = arbitreLignePotentiel.ArbitreBonneNationalite(listJoueur);
+            if(disponible && bonneNationalite && listArbitrePotentiel.size() < 10){
+                listArbitrePotentiel.add(arbitreLignePotentiel);
             }
         }
-        if(listArbitrePotentiel.size() == 9) {
             return listArbitrePotentiel;
-        }
-        return null;
+
         }
 
     }

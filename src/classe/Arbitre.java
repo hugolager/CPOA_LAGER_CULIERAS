@@ -134,6 +134,24 @@ public abstract class Arbitre {
         }
         return listEDT;
     }
+    public boolean ArbitreDispoAHorraire(GregorianCalendar horraireMatch, ArrayList<Match> listMatch){
+        ArrayList<GregorianCalendar> EDTArbitre = new ArrayList<>();
+        EDTArbitre = this.findEmploiDuTemps(listMatch);
+        for (GregorianCalendar horraireArbitre : EDTArbitre){
+            if(horraireArbitre == horraireMatch){
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean ArbitreBonneNationalite(ArrayList<Joueur> listJoueur){
+        for (Joueur joeurDuMatch : listJoueur){
+            if(this.getNationaliteArbitre() == joeurDuMatch.getNationaliteJoueur()){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 }
