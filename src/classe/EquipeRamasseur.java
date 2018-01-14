@@ -1,4 +1,9 @@
-package classe; /**
+package classe;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
+/**
  * Created by hugol on 18/12/2017.
  */
 
@@ -39,52 +44,24 @@ public class EquipeRamasseur {
     public void setRamasseurDeBalles(RamasseurDeBalles[] ramasseurDeBalles) {
         this.ramasseurDeBalles = ramasseurDeBalles;
     }
-
-    public java.util.Collection<Match> getMatch() {
-        if (match == null)
-            match = new java.util.HashSet<Match>();
-        return match;
+    public ArrayList<GregorianCalendar> findEDTEquipeRamasseur(ArrayList<Match> listMatch){
+        ArrayList<GregorianCalendar> listEDT = new ArrayList<>();
+        for(Match m : listMatch){
+            // on ajoute dans liste des indisponibilitées tous les créneaux horraire ou le court est occupé
+            if(m.getEquipeRamasseur1() == this || m.getEquipeRamasseur2() == this){
+                listEDT.add(m.getDateMatch());
+            }
+        }
+        return listEDT;
     }
-
-    public java.util.Iterator getIteratorMatch() {
-        if (match == null)
-            match = new java.util.HashSet<Match>();
-        return match.iterator();
-    }
-
-    /**
-     * @param newMatch */
-    public void setMatch(java.util.Collection<Match> newMatch) {
-        removeAllMatch();
-        for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
-            addMatch((Match)iter.next());
-    }
-
-    /**
-     * @param newMatch */
-    public void addMatch(Match newMatch) {
-        if (newMatch == null)
-            return;
-        if (this.match == null)
-            this.match = new java.util.HashSet<Match>();
-        if (!this.match.contains(newMatch))
-            this.match.add(newMatch);
-    }
-
-    /**
-     * @param oldMatch */
-    public void removeMatch(Match oldMatch) {
-        if (oldMatch == null)
-            return;
-        if (this.match != null)
-            if (this.match.contains(oldMatch))
-                this.match.remove(oldMatch);
-    }
-
-
-    public void removeAllMatch() {
-        if (match != null)
-            match.clear();
+    public boolean equipeRamasseurDispoAHorraire(GregorianCalendar horraireMatch, ArrayList<Match> listMatch){
+        ArrayList<GregorianCalendar> EDTEquipeRamasseur = this.findEDTEquipeRamasseur(listMatch);
+        for (GregorianCalendar horraireEquipeRamasseur : EDTEquipeRamasseur){
+            if(horraireEquipeRamasseur == horraireMatch){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

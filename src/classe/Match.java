@@ -82,7 +82,6 @@ public class Match {
     }
     public static boolean creneauIsValide(GregorianCalendar dateMatch ){
         // On teste si l'heure du match est dans les créneaux qu'on a prédéfini.
-
         if (dateMatch.get(Calendar.HOUR_OF_DAY) != 8 && dateMatch.get(Calendar.HOUR_OF_DAY) != 11 && dateMatch.get(Calendar.HOUR_OF_DAY) != 15 && dateMatch.get(Calendar.HOUR_OF_DAY) != 18
                 && dateMatch.get(Calendar.HOUR_OF_DAY) != 21 || dateMatch.get(Calendar.MINUTE) != 0){
                 return false;

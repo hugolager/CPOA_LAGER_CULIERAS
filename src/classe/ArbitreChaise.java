@@ -28,9 +28,11 @@ public class ArbitreChaise extends Arbitre {
     public static int getNbTotalArbitreChaise() {
         return nbTotalArbitreChaise;
     }
+
     public int getIdArbitreChaise(){
         return idArbitreChaise;
     }
+
     public String getMailArbitreChaise() {
         return mailArbitreChaise;
     }
@@ -38,10 +40,10 @@ public class ArbitreChaise extends Arbitre {
     public void setMailArbitreChaise(String mailArbitreChaise) {
         this.mailArbitreChaise = mailArbitreChaise;
     }
+
     public String getNomArbitre(){
         return nomArbitre;
     }
-
 
     public void setNomArbitre(String nomArbitreChaise) {
         this.nomArbitre = nomArbitreChaise;
@@ -56,8 +58,6 @@ public class ArbitreChaise extends Arbitre {
     public void setNationaliteArbitre(String nationaliteArbitreChaise) {
         this.nationaliteArbitre = nationaliteArbitreChaise;
     }
-
-
     public String getPrenomArbitre(){
         return prenomArbitre;
     }
@@ -65,11 +65,8 @@ public class ArbitreChaise extends Arbitre {
 
     public void setPrenomArbitre(String prenomArbitreChaise) {
         this.prenomArbitre = prenomArbitreChaise;
-
     }
-
-
-
+    // méthode pour respecter la contrainte sur le nombre de match simple
     public int getNbMatchSimple() {
         return nbMatchSimple;
     }
@@ -77,10 +74,11 @@ public class ArbitreChaise extends Arbitre {
     public void addMatchSimple() {
         nbMatchSimple++;
     }
+
     public void removeMatchSimple(){
         nbMatchSimple--;
     }
-
+    // méthode pour respecter la contrainte sur le nombre de match double
     public int getNbMatchDouble() {
         return nbMatchDouble;
     }

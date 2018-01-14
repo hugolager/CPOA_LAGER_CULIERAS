@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22367106-6fe2-4ce8-9604-ff79ed8a0903" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/Arbitre.java" afterPath="$PROJECT_DIR$/src/classe/Arbitre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/ArbitreChaise.java" afterPath="$PROJECT_DIR$/src/classe/ArbitreChaise.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/ArbitreLigne.java" afterPath="$PROJECT_DIR$/src/classe/ArbitreLigne.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/Court.java" afterPath="$PROJECT_DIR$/src/classe/Court.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/EquipeRamasseur.java" afterPath="$PROJECT_DIR$/src/classe/EquipeRamasseur.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/Match.java" afterPath="$PROJECT_DIR$/src/classe/Match.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classe/RamasseurDeBalles.java" afterPath="$PROJECT_DIR$/src/classe/RamasseurDeBalles.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Application.java" afterPath="$PROJECT_DIR$/src/main/Application.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,20 +29,22 @@
       <file leaf-file-name="ArbitreChaise.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classe/ArbitreChaise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="1353">
+              <caret line="80" column="73" lean-forward="false" selection-start-line="80" selection-start-column="73" selection-end-line="80" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1757#1758#0" expanded="true" />
+                <element signature="e#1813#1814#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-33">
-              <caret line="176" column="52" lean-forward="false" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+            <state relative-caret-position="561">
+              <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,8 +55,8 @@
       <file leaf-file-name="ArbitreLigne.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classe/ArbitreLigne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1353">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="297">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,40 +64,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NbMatchLimiteException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exception/NbMatchLimiteException.java">
+      <file leaf-file-name="Court.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classe/Court.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="99">
+              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding>
-                <element signature="e#168#169#0" expanded="false" />
-                <element signature="e#198#199#0" expanded="false" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReposException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exception/ReposException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding>
-                <element signature="e#152#153#0" expanded="false" />
-                <element signature="e#182#183#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Arbitre.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Arbitre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classe/Arbitre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5016">
-              <caret line="152" column="20" lean-forward="false" selection-start-line="152" selection-start-column="20" selection-end-line="152" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="4455">
+              <caret line="136" column="20" lean-forward="false" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,19 +90,20 @@
       <file leaf-file-name="RamasseurDeBalles.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classe/RamasseurDeBalles.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="1023">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EquipeRamasseur.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classe/EquipeRamasseur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1117">
+              <caret line="57" column="97" lean-forward="false" selection-start-line="57" selection-start-column="97" selection-end-line="57" selection-end-column="97" />
               <folding>
-                <element signature="e#534#535#0" expanded="false" />
-                <element signature="e#573#574#0" expanded="false" />
-                <element signature="e#603#604#0" expanded="false" />
-                <element signature="e#629#630#0" expanded="false" />
-                <element signature="e#667#668#0" expanded="false" />
-                <element signature="e#697#698#0" expanded="false" />
-                <element signature="e#730#731#0" expanded="false" />
-                <element signature="e#759#760#0" expanded="false" />
-                <element signature="e#803#804#0" expanded="false" />
-                <element signature="e#839#840#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,22 +112,9 @@
       <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classe/Match.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2046">
-              <caret line="87" column="29" lean-forward="false" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+            <state relative-caret-position="33">
+              <caret line="83" column="80" lean-forward="false" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreneauException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exception/CreneauException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
-              <folding>
-                <element signature="e#156#157#0" expanded="false" />
-                <element signature="e#186#187#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -171,9 +153,6 @@
         <option value="$PROJECT_DIR$/src/classe.java" />
         <option value="$PROJECT_DIR$/src/classe/mainTest.java" />
         <option value="$PROJECT_DIR$/src/classe/Joueur.java" />
-        <option value="$PROJECT_DIR$/src/classe/RamasseurDeBalles.java" />
-        <option value="$PROJECT_DIR$/src/classe/EquipeRamasseur.java" />
-        <option value="$PROJECT_DIR$/src/classe/Court.java" />
         <option value="$PROJECT_DIR$/src/exception/NationaliteException.java" />
         <option value="$PROJECT_DIR$/src/exception/CreneauException.java" />
         <option value="$PROJECT_DIR$/src/exception/arbitreLigneIndisponible.java" />
@@ -181,10 +160,13 @@
         <option value="$PROJECT_DIR$/src/exception/ReposException.java" />
         <option value="$PROJECT_DIR$/src/main/mainTest.java" />
         <option value="$PROJECT_DIR$/src/exception/NbMatchLimiteException.java" />
-        <option value="$PROJECT_DIR$/src/classe/Match.java" />
-        <option value="$PROJECT_DIR$/src/classe/ArbitreChaise.java" />
-        <option value="$PROJECT_DIR$/src/classe/ArbitreLigne.java" />
+        <option value="$PROJECT_DIR$/src/classe/RamasseurDeBalles.java" />
         <option value="$PROJECT_DIR$/src/classe/Arbitre.java" />
+        <option value="$PROJECT_DIR$/src/classe/Court.java" />
+        <option value="$PROJECT_DIR$/src/classe/ArbitreLigne.java" />
+        <option value="$PROJECT_DIR$/src/classe/ArbitreChaise.java" />
+        <option value="$PROJECT_DIR$/src/classe/Match.java" />
+        <option value="$PROJECT_DIR$/src/classe/EquipeRamasseur.java" />
         <option value="$PROJECT_DIR$/src/main/Application.java" />
       </list>
     </option>
@@ -216,8 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -287,6 +267,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -733,15 +715,17 @@
       <workItem from="1515408705499" duration="271000" />
       <workItem from="1515481392415" duration="11674000" />
       <workItem from="1515685464159" duration="6996000" />
+      <workItem from="1515854439962" duration="8020000" />
+      <workItem from="1515936423377" duration="6302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87728000" />
+    <option name="totallyTimeSpent" value="102050000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
-    <editor active="false" />
+    <frame x="-13" y="-13" width="3026" height="1946" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -753,12 +737,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910663" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32910663" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.116333336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -826,16 +810,8 @@
         <state relative-caret-position="198">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#536#537#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#843#844#0" expanded="false" />
-            <element signature="e#883#884#0" expanded="false" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -885,6 +861,8 @@
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
+            <element signature="e#1813#1814#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -893,9 +871,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -903,18 +879,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#603#604#0" expanded="false" />
-            <element signature="e#629#630#0" expanded="false" />
-            <element signature="e#667#668#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#730#731#0" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-            <element signature="e#839#840#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -951,7 +916,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -960,16 +927,8 @@
         <state relative-caret-position="198">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#536#537#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#843#844#0" expanded="false" />
-            <element signature="e#883#884#0" expanded="false" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1019,6 +978,8 @@
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
+            <element signature="e#1813#1814#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1027,9 +988,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,18 +996,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#603#604#0" expanded="false" />
-            <element signature="e#629#630#0" expanded="false" />
-            <element signature="e#667#668#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#730#731#0" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-            <element signature="e#839#840#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +1022,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,16 +1033,8 @@
         <state relative-caret-position="528">
           <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#536#537#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#843#844#0" expanded="false" />
-            <element signature="e#883#884#0" expanded="false" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1139,33 +1081,6 @@
     <entry file="file://$PROJECT_DIR$/src/classe.java" />
     <entry file="file://$PROJECT_DIR$/../../IUT_LYON_1_S2/BD/jdbc/src/jdbctp1/JDBCTP1.java" />
     <entry file="file://$PROJECT_DIR$/../../IUT_LYON_1_S2/BD/jdbc/src/jdbctp1/ConfigConnection.java" />
-    <entry file="file://$PROJECT_DIR$/src/classe/EquipeRamasseur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classe/Court.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#536#537#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#843#844#0" expanded="false" />
-            <element signature="e#883#884#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classe/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -1212,51 +1127,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#156#157#0" expanded="false" />
-            <element signature="e#186#187#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/exception/ReposException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <element signature="e#152#153#0" expanded="false" />
-            <element signature="e#182#183#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/exception/NbMatchLimiteException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#168#169#0" expanded="false" />
-            <element signature="e#198#199#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classe/RamasseurDeBalles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-          <folding>
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#603#604#0" expanded="false" />
-            <element signature="e#629#630#0" expanded="false" />
-            <element signature="e#667#668#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#730#731#0" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-            <element signature="e#839#840#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,28 +1138,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classe/ArbitreLigne.java">
+    <entry file="file://$PROJECT_DIR$/src/exception/ReposException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exception/NbMatchLimiteException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classe/Arbitre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4455">
+          <caret line="136" column="20" lean-forward="false" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classe/Court.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding>
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classe/ArbitreChaise.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1353">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="80" column="73" lean-forward="false" selection-start-line="80" selection-start-column="73" selection-end-line="80" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
+            <element signature="e#1813#1814#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classe/Match.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="87" column="29" lean-forward="false" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+        <state relative-caret-position="33">
+          <caret line="83" column="80" lean-forward="false" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classe/ArbitreChaise.java">
+    <entry file="file://$PROJECT_DIR$/src/classe/RamasseurDeBalles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="1023">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classe/EquipeRamasseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1117">
+          <caret line="57" column="97" lean-forward="false" selection-start-line="57" selection-start-column="97" selection-end-line="57" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classe/ArbitreLigne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1297,18 +1223,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="176" column="52" lean-forward="false" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classe/Arbitre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5016">
-          <caret line="152" column="20" lean-forward="false" selection-start-line="152" selection-start-column="20" selection-end-line="152" selection-end-column="20" />
+        <state relative-caret-position="561">
+          <caret line="94" column="45" lean-forward="false" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

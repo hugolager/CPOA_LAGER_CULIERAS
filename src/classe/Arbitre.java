@@ -134,7 +134,7 @@ public abstract class Arbitre {
         }
         return listEDT;
     }
-    public boolean ArbitreDispoAHorraire(GregorianCalendar horraireMatch, ArrayList<Match> listMatch){
+    public boolean arbitreDispoAHorraire(GregorianCalendar horraireMatch, ArrayList<Match> listMatch){
         ArrayList<GregorianCalendar> EDTArbitre = new ArrayList<>();
         EDTArbitre = this.findEmploiDuTemps(listMatch);
         for (GregorianCalendar horraireArbitre : EDTArbitre){

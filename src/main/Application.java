@@ -56,6 +56,25 @@ public class Application {
                 "patrickquicet@gmail.com");
         ArbitreLigne arbitreLigne8 = new ArbitreLigne("patrick", "malade", "Danois",
                 "patrickmalade@gmail.com");
+        ArbitreLigne arbitreLigne9 = new ArbitreLigne("benjamin", "leprince", "Russe",
+                "leprincebenjamin@gmail.com");
+        ArbitreLigne arbitreLigne10 = new ArbitreLigne("leprince", "marvin", "Senegalais",
+                "marvinleprince@gmail.com");
+        ArbitreLigne arbitreLigne11 = new ArbitreLigne("leprince", "virgil", "Neerlendais",
+                "virgilleprince@gmail.com");
+        ArbitreLigne arbitreLigne12 = new ArbitreLigne("hazard", "eden", "Belge",
+                "edenhazard@gmail.com");
+        ArbitreLigne arbitreLigne13 = new ArbitreLigne("yoyo", "tata", "Polonais",
+                "tatayoyo@gmail.com");
+        ArbitreLigne arbitreLigne14 = new ArbitreLigne("cache", "questu", "Corse",
+                "questucache@gmail.com");
+        ArbitreLigne arbitreLigne15 = new ArbitreLigne("grandchapo", "souton", "Catalan",
+                "soutongrandchapo@gmail.com");
+        ArbitreLigne arbitreLigne16 = new ArbitreLigne("atudors", "jozy", "Australien",
+                "jozyatudors@gmail.com");
+        ArbitreLigne arbitreLigne17 = new ArbitreLigne("eath", "phil", "Americain",
+                "phileath@gmail.com");
+
         ArrayList<ArbitreLigne> listArbitreLigne1 = new ArrayList<>();
         listArbitreLigne1.add(arbitreLigne1);
         listArbitreLigne1.add(arbitreLigne2);
@@ -65,6 +84,17 @@ public class Application {
         listArbitreLigne1.add(arbitreLigne6);
         listArbitreLigne1.add(arbitreLigne7);
         listArbitreLigne1.add(arbitreLigne8);
+        listArbitreLigne1.add(arbitreLigne9);
+        listArbitreLigne1.add(arbitreLigne10);
+        listArbitreLigne1.add(arbitreLigne11);
+        listArbitreLigne1.add(arbitreLigne12);
+        listArbitreLigne1.add(arbitreLigne13);
+        listArbitreLigne1.add(arbitreLigne14);
+        listArbitreLigne1.add(arbitreLigne15);
+        listArbitreLigne1.add(arbitreLigne16);
+        listArbitreLigne1.add(arbitreLigne17);
+
+
 
         RamasseurDeBalles ramasseurDeBalles1 = new RamasseurDeBalles("bouteflika", "abdelaziz");
         RamasseurDeBalles ramasseurDeBalles2 = new RamasseurDeBalles("boutala", "abdelaziz");
@@ -177,6 +207,7 @@ public class Application {
             System.out.println("les arbitres sont : " + arbitreTest.getPrenomArbitre() + " " + arbitreTest.getNomArbitre());
         }
 
+
     }
 
 
@@ -259,8 +290,7 @@ public class Application {
 
     public void genererTableau(ArrayList<Joueur> listJoueur, ArrayList<Match> listMatch) {
         // génération du premier tour de manière random sur les joueurs
-        ArrayList<Joueur> listClone = new ArrayList<>();
-        listClone = listJoueur;
+        ArrayList<Joueur> listClone = listJoueur;
         int i = 0;
         int compteurDeMatch = 0;
         while(i < 16){ // il doit y avoir 16 matchs au premier tour étant donné qu'il y a 32 joueurs
@@ -287,10 +317,11 @@ public class Application {
 
         }
     }
-    public ArrayList<Arbitre> findArbitre(ArrayList<Joueur> listJoueur, GregorianCalendar horraireMatch, boolean matchDeQualification, ArrayList<ArbitreChaise> listArbitreChaise,
-                                          ArrayList<ArbitreLigne>listArbitreLigne, ArrayList<Match> listMatch){
+    public ArrayList<Arbitre> findArbitre(ArrayList<Joueur> listJoueur, GregorianCalendar horraireMatch, boolean matchDeQualification,
+                                          ArrayList<ArbitreChaise> listArbitreChaise, ArrayList<ArbitreLigne>listArbitreLigne, ArrayList<Match> listMatch){
         ArrayList<Arbitre> listArbitrePotentiel = new ArrayList<>();
         boolean matchSimple;
+        // true = match en simple ; false = match en double
         if(listJoueur.size() == 2){
             matchSimple = true;
         }
@@ -298,7 +329,7 @@ public class Application {
             matchSimple = false;
         }
         for (ArbitreChaise arbitreChaisePotentiel : listArbitreChaise) {
-            boolean disponible = arbitreChaisePotentiel.ArbitreDispoAHorraire(horraireMatch,listMatch);
+            boolean disponible = arbitreChaisePotentiel.arbitreDispoAHorraire(horraireMatch,listMatch);
             boolean bonneNationalite = arbitreChaisePotentiel.ArbitreBonneNationalite(listJoueur);
             if (!matchDeQualification){
                 if(matchSimple) {
@@ -323,7 +354,7 @@ public class Application {
         }
 
         for (ArbitreLigne arbitreLignePotentiel : listArbitreLigne) {
-            boolean disponible = arbitreLignePotentiel.ArbitreDispoAHorraire(horraireMatch,listMatch);
+            boolean disponible = arbitreLignePotentiel.arbitreDispoAHorraire(horraireMatch,listMatch);
             boolean bonneNationalite = arbitreLignePotentiel.ArbitreBonneNationalite(listJoueur);
             if(disponible && bonneNationalite && listArbitrePotentiel.size() < 10){
                 listArbitrePotentiel.add(arbitreLignePotentiel);
@@ -332,6 +363,47 @@ public class Application {
             return listArbitrePotentiel;
 
         }
+        // méthode pour afficher une liste de court potentiel que peut utiliser le gérant pour un match au lieu de chercher on lui propose
+        public ArrayList<Court> findCourt(ArrayList<Court> courtArrayList, GregorianCalendar horraireMatch,ArrayList<Match> listMatch){
+            ArrayList<Court> listCourtPotentiel = new ArrayList<>();
+
+            for(Court courtPotentiel : courtArrayList){
+                ArrayList<GregorianCalendar> listReservation = new ArrayList<>();
+                boolean disponible = courtPotentiel.courtDispoAHorraire(horraireMatch,listMatch);
+                if(disponible){
+                    listCourtPotentiel.add(courtPotentiel);
+                }
+                /* ici on ajoute à la liste des courts potentiels les courts qui ont des réservations à l'horraire du match mais on informe le gérant
+                que le court est réservé pour un entrainement et qu'il faut notifier le joueur que son entrainement ne sera pas possible à cette horraire*/
+                for (GregorianCalendar reservation : listReservation){
+                    if(reservation == horraireMatch){
+                        System.out.println("Attention le court " + courtPotentiel.getNomCourt() +
+                                " est réservé pour un entrainement il faut informer les joueurs qui ont fait des réservations si vous voulez l'utiliser ");
+                        listCourtPotentiel.add(courtPotentiel);
+                    }
+
+                }
+            }
+            if (listCourtPotentiel.size() !=0) {
+                return listCourtPotentiel;
+            }
+            return null;
+        }
+    // méthode pour afficher une liste d'équipe ramasseur potentiel que peut utiliser le gérant pour un match au lieu de chercher on lui propose
+    public ArrayList<EquipeRamasseur> findEquipeRamasseur(ArrayList<EquipeRamasseur> equipeRamasseurArrayList, GregorianCalendar horraireMatch,ArrayList<Match> listMatch){
+            ArrayList<EquipeRamasseur> listEquipeRamasseurPotentiel = new ArrayList<>();
+            for(EquipeRamasseur equipeRamasseurPotentiel : equipeRamasseurArrayList){
+                boolean disponible = equipeRamasseurPotentiel.equipeRamasseurDispoAHorraire(horraireMatch,listMatch);
+                if(disponible){
+                    listEquipeRamasseurPotentiel.add(equipeRamasseurPotentiel);
+                }
+            }
+            if (listEquipeRamasseurPotentiel.size() !=0) {
+                return listEquipeRamasseurPotentiel;
+            }
+            return null;
+        }
+
 
     }
 
