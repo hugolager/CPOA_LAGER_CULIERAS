@@ -54,7 +54,7 @@ public class Court {
         }
         return listIndispo;
     }
-    // méthode qui permet de savoir si le court est disponible à un horraire donné
+    // méthode qui permet de savoir si le court est disponible à un horaire donné
     public boolean courtDispoAHorraire(GregorianCalendar horraireMatch, ArrayList<Match> listMatch){
         ArrayList<GregorianCalendar> EDTCourt = new ArrayList<>();
         EDTCourt = this.findDisponibilitee(listMatch);
@@ -72,7 +72,7 @@ public class Court {
         try {
             for (GregorianCalendar reservation : listReservation) {
                 if (reservation == horraireReservation) {
-                    throw new CreneauException("Le court est déja réservé à cette horraire");
+                    throw new CreneauException("Le court est déjà réservé à cette horaire");
                 }
             }
             if (disponible) {

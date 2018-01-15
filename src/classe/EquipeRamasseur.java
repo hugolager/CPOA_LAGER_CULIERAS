@@ -12,7 +12,7 @@ public class EquipeRamasseur {
     private int idEquipeRamasseur ;
     private String nomEquipe;
     public RamasseurDeBalles[] ramasseurDeBalles;
-    public java.util.Collection<Match> match;
+
 
     public EquipeRamasseur(String nomEquipe, RamasseurDeBalles[] ramasseurDeBalles) {
         this.nomEquipe = nomEquipe;

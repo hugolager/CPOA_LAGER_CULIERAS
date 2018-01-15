@@ -5,7 +5,7 @@ import exception.CreneauException;
 import exception.NationaliteException;
 import exception.NbMatchLimiteException;
 import exception.ReposException;
-import org.omg.CORBA.FREE_MEM;
+
 
 import java.util.*;
 
@@ -210,7 +210,7 @@ public class Application {
 
     }
 
-
+    // méthode qui permet de programmer un match de manière prioritaire sur les entrainements
     public void programmerUnMatch(ArrayList<Match> listMatch, GregorianCalendar horraireDuMatch, Court courtDuMatch,
                                   ArrayList<Joueur> listJoueurDuMatch, EquipeRamasseur equipeRamasseur1, EquipeRamasseur equipeRamasseur2,
                                   ArbitreChaise arbitreChaise, ArrayList<ArbitreLigne> listArbitreLigneDuMatch, boolean matchDeQualification) {
@@ -287,9 +287,8 @@ public class Application {
             System.err.println(e4.getMessage());
         }
     }
-
+    // génération du premier tour de manière random sur les joueurs
     public void genererTableau(ArrayList<Joueur> listJoueur, ArrayList<Match> listMatch) {
-        // génération du premier tour de manière random sur les joueurs
         ArrayList<Joueur> listClone = listJoueur;
         int i = 0;
         int compteurDeMatch = 0;
@@ -317,6 +316,7 @@ public class Application {
 
         }
     }
+    // méthode qui permet de donner une liste de 8 arbitres de lignes et 1 arbitre de chaise en respectant toutes les contraintes
     public ArrayList<Arbitre> findArbitre(ArrayList<Joueur> listJoueur, GregorianCalendar horraireMatch, boolean matchDeQualification,
                                           ArrayList<ArbitreChaise> listArbitreChaise, ArrayList<ArbitreLigne>listArbitreLigne, ArrayList<Match> listMatch){
         ArrayList<Arbitre> listArbitrePotentiel = new ArrayList<>();
@@ -390,7 +390,8 @@ public class Application {
             return null;
         }
     // méthode pour afficher une liste d'équipe ramasseur potentiel que peut utiliser le gérant pour un match au lieu de chercher on lui propose
-    public ArrayList<EquipeRamasseur> findEquipeRamasseur(ArrayList<EquipeRamasseur> equipeRamasseurArrayList, GregorianCalendar horraireMatch,ArrayList<Match> listMatch){
+    public ArrayList<EquipeRamasseur> findEquipeRamasseur(ArrayList<EquipeRamasseur> equipeRamasseurArrayList, GregorianCalendar horraireMatch,
+                                                          ArrayList<Match> listMatch){
             ArrayList<EquipeRamasseur> listEquipeRamasseurPotentiel = new ArrayList<>();
             for(EquipeRamasseur equipeRamasseurPotentiel : equipeRamasseurArrayList){
                 boolean disponible = equipeRamasseurPotentiel.equipeRamasseurDispoAHorraire(horraireMatch,listMatch);

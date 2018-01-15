@@ -11,7 +11,7 @@ public class ArbitreLigne extends Arbitre {
     private String mailArbitreLigne;
     public static  int nbTotalArbitreLigne=0;
     private int idArbitreLigne;
-    public java.util.Collection<Match> match;
+
 
     public ArbitreLigne(String nomArbitreLigne,String prenomArbitreLigne,String nationaliteArbitreLigne,String mailArbitreLigne) {
         this.nomArbitre= nomArbitreLigne;

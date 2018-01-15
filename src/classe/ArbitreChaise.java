@@ -70,11 +70,11 @@ public class ArbitreChaise extends Arbitre {
     public int getNbMatchSimple() {
         return nbMatchSimple;
     }
-
+    //méthode pour ajouter un match simple
     public void addMatchSimple() {
         nbMatchSimple++;
     }
-
+    //méthode pour enlever un match simple
     public void removeMatchSimple(){
         nbMatchSimple--;
     }
@@ -82,9 +82,13 @@ public class ArbitreChaise extends Arbitre {
     public int getNbMatchDouble() {
         return nbMatchDouble;
     }
-
+    //méthode pour ajouter un match double
     public void addMatchDouble() {
         nbMatchDouble++;
+    }
+    //méthode pour enlever un match double
+    public void removeMatchDouble(){
+        nbMatchDouble--;
     }
 
 }
