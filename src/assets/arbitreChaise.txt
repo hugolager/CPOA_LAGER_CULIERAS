@@ -1,0 +1,8 @@
+"patrick.chirac@gmail.com","patrick","chirac","Français";
+"mark.unbut@gmail.com","mark","unbut","Indien";
+"gerard.mentfroid@gmail.com","gerard","mentfroid","Suisse";
+"emile.louis@gmail.com","emile","louis","Danois";
+"marcel.ino@gmail.com","marcel","ino","Italien";
+"jean.meluch@gmail.com","jean","meluch","Venezuelien";
+"phil.air@gmail.com","phil","air","Anglais";
+"carl.larguerrefaite@gmail.com","carl","laguerrefaite","Allemand";
