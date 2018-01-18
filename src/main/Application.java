@@ -7,186 +7,40 @@ import exception.NbMatchLimiteException;
 import exception.ReposException;
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 /**
  * Created by hugol on 18/12/2017.
  */
 public class Application {
-    public static void main(String Args[]) {
-        ArbitreChaise arbitreChaise1 = new ArbitreChaise("patrick.chirac@gmail.com", "patrick", "chirac",
-                "Français");
-        ArbitreChaise arbitreChaise2 = new ArbitreChaise("mark.unbut@gmail.com","mark","unbut",
-                "Indien");
-        ArbitreChaise arbitreChaise3 = new ArbitreChaise("gerard.mentfroid@gmail.com","gerard","mentfroid",
-                "Suisse");
-        ArbitreChaise arbitreChaise4 = new ArbitreChaise("emile.louis@gmail.com","emile","louis",
-                "Danois");
-        ArbitreChaise arbitreChaise5 = new ArbitreChaise("marcel.ino@gmail.com","marcel","ino",
-                "Italien");
-        ArbitreChaise arbitreChaise6 = new ArbitreChaise("jean.meluch@gmail.com","jean","meluch",
-                "Venezuelien");
-        ArbitreChaise arbitreChaise7 = new ArbitreChaise("phil.air@gmail.com","phil","air",
-                "Anglais");
-        ArbitreChaise arbitreChaise8 = new ArbitreChaise("carl.larguerrefaite@gmail.com","carl","laguerrefaite",
-                "Allemand");
+    public static void main(String Args[]) throws IOException {
+         /*
         ArrayList<ArbitreChaise> listArbitreChaise = new ArrayList<>();
-        listArbitreChaise.add(arbitreChaise1);
-        listArbitreChaise.add(arbitreChaise2);
-        listArbitreChaise.add(arbitreChaise3);
-        listArbitreChaise.add(arbitreChaise4);
-        listArbitreChaise.add(arbitreChaise5);
-        listArbitreChaise.add(arbitreChaise6);
-        listArbitreChaise.add(arbitreChaise7);
-        listArbitreChaise.add(arbitreChaise8);
 
-        ArbitreLigne arbitreLigne1 = new ArbitreLigne("patrick", "demal", "Ecossais",
-                "patrickcalcker@gmail.com");
-        ArbitreLigne arbitreLigne2 = new ArbitreLigne("patrick", "sasi", "Français",
-                "patricksasi@gmail.com");
-        ArbitreLigne arbitreLigne3 = new ArbitreLigne("patrick", "abet", "Espagnol",
-                "patrickabet@gmail.com");
-        ArbitreLigne arbitreLigne4 = new ArbitreLigne("patrick", "chato", "Suisse",
-                "patrickchato@gmail.com");
-        ArbitreLigne arbitreLigne5 = new ArbitreLigne("patrick", "holin", "Congolais",
-                "patrickholin@gmail.com");
-        ArbitreLigne arbitreLigne6 = new ArbitreLigne("patrick", "pato", "Bresilien",
-                "patrickpato@gmail.com");
-        ArbitreLigne arbitreLigne7 = new ArbitreLigne("patrick", "quicet", "Gallois",
-                "patrickquicet@gmail.com");
-        ArbitreLigne arbitreLigne8 = new ArbitreLigne("patrick", "malade", "Danois",
-                "patrickmalade@gmail.com");
-        ArbitreLigne arbitreLigne9 = new ArbitreLigne("benjamin", "leprince", "Russe",
-                "leprincebenjamin@gmail.com");
-        ArbitreLigne arbitreLigne10 = new ArbitreLigne("leprince", "marvin", "Senegalais",
-                "marvinleprince@gmail.com");
-        ArbitreLigne arbitreLigne11 = new ArbitreLigne("leprince", "virgil", "Neerlendais",
-                "virgilleprince@gmail.com");
-        ArbitreLigne arbitreLigne12 = new ArbitreLigne("hazard", "eden", "Belge",
-                "edenhazard@gmail.com");
-        ArbitreLigne arbitreLigne13 = new ArbitreLigne("yoyo", "tata", "Polonais",
-                "tatayoyo@gmail.com");
-        ArbitreLigne arbitreLigne14 = new ArbitreLigne("cache", "questu", "Corse",
-                "questucache@gmail.com");
-        ArbitreLigne arbitreLigne15 = new ArbitreLigne("grandchapo", "souton", "Catalan",
-                "soutongrandchapo@gmail.com");
-        ArbitreLigne arbitreLigne16 = new ArbitreLigne("atudors", "jozy", "Australien",
-                "jozyatudors@gmail.com");
-        ArbitreLigne arbitreLigne17 = new ArbitreLigne("eath", "phil", "Americain",
-                "phileath@gmail.com");
+
 
         ArrayList<ArbitreLigne> listArbitreLigne1 = new ArrayList<>();
-        listArbitreLigne1.add(arbitreLigne1);
-        listArbitreLigne1.add(arbitreLigne2);
-        listArbitreLigne1.add(arbitreLigne3);
-        listArbitreLigne1.add(arbitreLigne4);
-        listArbitreLigne1.add(arbitreLigne5);
-        listArbitreLigne1.add(arbitreLigne6);
-        listArbitreLigne1.add(arbitreLigne7);
-        listArbitreLigne1.add(arbitreLigne8);
-        listArbitreLigne1.add(arbitreLigne9);
-        listArbitreLigne1.add(arbitreLigne10);
-        listArbitreLigne1.add(arbitreLigne11);
-        listArbitreLigne1.add(arbitreLigne12);
-        listArbitreLigne1.add(arbitreLigne13);
-        listArbitreLigne1.add(arbitreLigne14);
-        listArbitreLigne1.add(arbitreLigne15);
-        listArbitreLigne1.add(arbitreLigne16);
-        listArbitreLigne1.add(arbitreLigne17);
 
 
-
-        RamasseurDeBalles ramasseurDeBalles1 = new RamasseurDeBalles("bouteflika", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles2 = new RamasseurDeBalles("boutala", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles3 = new RamasseurDeBalles("boutejele", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles4 = new RamasseurDeBalles("boutemange", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles5 = new RamasseurDeBalles("boutefroid", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles6 = new RamasseurDeBalles("boutneige", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles7 = new RamasseurDeBalles("boutgigo", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles8 = new RamasseurDeBalles("boutegiga", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles9 = new RamasseurDeBalles("bouteille", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles10 = new RamasseurDeBalles("boutdecaca", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles11 = new RamasseurDeBalles("boutdegras", "abdelaziz");
-        RamasseurDeBalles ramasseurDeBalles12 = new RamasseurDeBalles("boutlol", "abdelaziz");
         RamasseurDeBalles[] tabRamasseur1 = new RamasseurDeBalles[]{ramasseurDeBalles1, ramasseurDeBalles2, ramasseurDeBalles3,
                 ramasseurDeBalles4, ramasseurDeBalles5, ramasseurDeBalles6};
         RamasseurDeBalles[] tabRamasseur2 = new RamasseurDeBalles[]{ramasseurDeBalles7, ramasseurDeBalles8, ramasseurDeBalles9,
                 ramasseurDeBalles10, ramasseurDeBalles11, ramasseurDeBalles12};
 
+
         EquipeRamasseur equipeRamasseur1 = new EquipeRamasseur("les chalamontais", tabRamasseur1);
         EquipeRamasseur equipeRamasseur2 = new EquipeRamasseur("les villardois", tabRamasseur2);
 
-        Joueur joueur1 = new Joueur("Jean", "Neimar", "Bresilien", 67);
-        Joueur joueur2 = new Joueur("Jean", "Peuplu", "Peruvien", 78);
-        Joueur joueur3 = new Joueur("Abdel-Yves", "Icanfly", "Anglais", 125);
-        Joueur joueur4 = new Joueur("Jeff", "Roi", "Belge", 147);
-        Joueur joueur5 = new Joueur("Jay", "Pacho", "Australein", 76);
-        Joueur joueur6 = new Joueur("Glaude", "Yohooooo", "Français", 160);
-        Joueur joueur7 = new Joueur("Thierry", "Lecodeur", "Français", 367);
-        Joueur joueur8 = new Joueur("Yves", "Vasenaler", "Allemand", 45);
-        Joueur joueur9 = new Joueur("Damso", "Cocolo", "Tchadien", 74);
-        Joueur joueur10 = new Joueur("Gerard", "Departdieu", "Belge", 768);
-        Joueur joueur11 = new Joueur("Johny", "Alider", "Suedois", 44);
-        Joueur joueur12 = new Joueur("Rafael", "Nadal", "Espagnol", 1);
-        Joueur joueur13 = new Joueur("Yamamoto ", "Kaderate", "Japonais", 234);
-        Joueur joueur14 = new Joueur("Roger", "Federer", "Suisse", 2);
-        Joueur joueur15 = new Joueur("Novak", "Djokovic", "Serbe", 3);
-        Joueur joueur16 = new Joueur("Jean", "Mouloud", "Marocain", 149);
-        Joueur joueur17 = new Joueur("Aziz", "Khaled", "Tunisien", 56);
-        Joueur joueur18 = new Joueur("Larry", "Bambelle", "Americain", 69);
-        Joueur joueur19 = new Joueur("Jerry", "Kan", "Americain", 123);
-        Joueur joueur20 = new Joueur("Al", "Kolick", "Egyptien", 869);
-        Joueur joueur21 = new Joueur("Jean", "Meurdesoif", "Français", 22);
-        Joueur joueur22 = new Joueur("Ademar", "Monoto", "Lybien", 154);
-        Joueur joueur23 = new Joueur("Alphonse", "Danlmur", "Belge", 879);
-        Joueur joueur24 = new Joueur("Bernard", "Tichaud", "Canadien", 546);
-        Joueur joueur25 = new Joueur("Brice", "Glace", "Canadien", 63);
-        Joueur joueur26 = new Joueur("Djamal", "Digere", "Marocain", 21);
-        Joueur joueur27 = new Joueur("Douglas", "O’Chocolat", "Anglais", 59);
-        Joueur joueur28 = new Joueur("Garcin", "Lazare", "Italien", 84);
-        Joueur joueur29 = new Joueur("Hassan", "Cehef", "Tunisien", 91);
-        Joueur joueur30 = new Joueur("Medhi", "Khaman", "Tunisien", 86);
-        Joueur joueur31 = new Joueur("Pacôme", "Toullemonde", "Russe", 90);
-        Joueur joueur32 = new Joueur("Tex", "Agere", "Anglais", 23);
-
         ArrayList<Joueur> listJoueur = new ArrayList<>();
-        listJoueur.add(joueur1);
-        listJoueur.add(joueur2);
-        listJoueur.add(joueur3);
-        listJoueur.add(joueur4);
-        listJoueur.add(joueur5);
-        listJoueur.add(joueur6);
-        listJoueur.add(joueur7);
-        listJoueur.add(joueur8);
-        listJoueur.add(joueur9);
-        listJoueur.add(joueur10);
-        listJoueur.add(joueur11);
-        listJoueur.add(joueur12);
-        listJoueur.add(joueur13);
-        listJoueur.add(joueur14);
-        listJoueur.add(joueur15);
-        listJoueur.add(joueur16);
-        listJoueur.add(joueur17);
-        listJoueur.add(joueur18);
-        listJoueur.add(joueur19);
-        listJoueur.add(joueur20);
-        listJoueur.add(joueur21);
-        listJoueur.add(joueur22);
-        listJoueur.add(joueur23);
-        listJoueur.add(joueur24);
-        listJoueur.add(joueur25);
-        listJoueur.add(joueur26);
-        listJoueur.add(joueur27);
-        listJoueur.add(joueur28);
-        listJoueur.add(joueur29);
-        listJoueur.add(joueur30);
-        listJoueur.add(joueur31);
-        listJoueur.add(joueur32);
+       */
+
+
+        /*
         ArrayList<Match> listMatch = Match.getListMatch();
-
-
-
-
         // la partie qui sert à rentrer le résultat sera programmer sur l'interface
         Application testApplication = new Application();
         // testApplication.genererTableau(listJoueur,listMatch);
@@ -207,6 +61,16 @@ public class Application {
             System.out.println("les arbitres sont : " + arbitreTest.getPrenomArbitre() + " " + arbitreTest.getNomArbitre());
         }
 
+       */
+
+
+        File file = new File("src/assets/joueur.txt");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();
 
     }
 
@@ -347,9 +211,9 @@ public class Application {
 
             }
             else {
-            if(disponible && bonneNationalite && listArbitrePotentiel.size() < 1) {
-                listArbitrePotentiel.add(arbitreChaisePotentiel);
-            }
+                if(disponible && bonneNationalite && listArbitrePotentiel.size() < 1) {
+                    listArbitrePotentiel.add(arbitreChaisePotentiel);
+                }
             }
         }
 
